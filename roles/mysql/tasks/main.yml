@@ -1,0 +1,12 @@
+- name: "Create new database"
+  mysql_db:
+    name: magento
+    state: yes
+  become: yes
+
+- name: "Create new user"
+  mysql_user:
+    name: bob
+    password: 1234
+    priv: '*.*:ALL'
+    state: present

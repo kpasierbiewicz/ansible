@@ -1,0 +1,28 @@
+- name: "Install nginx"
+  package:
+    name: nginx
+    state: present
+
+- name: "Install php and package"
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - php
+    - php-fpm
+    - php-enchant
+    - php-mbstring
+    - php-mysql
+    - php-xml
+    - php-mcrypt
+    - php-gd
+
+- name: "Install composer"
+  package:
+    name: composer
+    state: present
+
+- name: "Install python-mysql"
+  package:
+    name: python-mysqldb
+    state: present
