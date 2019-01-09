@@ -3,6 +3,16 @@
     name: nginx
     state: present
 
+- name: "Install mysql"
+  package:
+    name: mysql-server
+    state: present
+
+- name: "Install composer"
+  package:
+    name: composer
+    state: present
+
 - name: "Install php and package"
   package:
     name: "{{ item }}"
@@ -10,12 +20,23 @@
   with_items:
     - php
     - php-fpm
-    - php-enchant
-    - php-mbstring
     - php-mysql
     - php-xml
     - php-mcrypt
-    - php-gd
+    - php-mbstring
+    - php-enchant
+    - php-dev
+    - php-cli
+    - php-common
+    - php-curl
+    - php-bz2
+    - php-bcmath
+    - php-dom
+    - php-intl
+    - php-zip
+    - php-soap
+    - php-sqlite3
+    - php-xsl
 
 - name: "Install composer"
   package:

@@ -1,0 +1,2 @@
+- name: "Install magento using composer"
+  shell: "composer create-project --repository=https://repo.magento.com/ magento/project-community-edytion=2.2.6 magento"
